@@ -96,8 +96,21 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="css/introjs.css">
     <link href="css/customstyles.css"rel="stylesheet">
     <link href="css/style.css"rel="stylesheet">
+    <style>
+      .forLastStep {
+        font-weight: bold;
+      }
+      .customDefault { 
+        color: gray;
+      }
+      .customDefault .introjs-skipbutton {
+        border-radius: 0;
+        color: red;
+      }
+      </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -124,12 +137,12 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
-            <li><a href="voter.php">Voter</a></li>
-            <li><a href="candidate.php">Candidate</a></li>
+            <li><a data-step="2" data-intro="<b>Voter</b> can register himself by clicking this link." href="voter.php">Voter</a></li>
+            <li ><a data-step="3" data-intro="<b>Candidate</b> can register himself by clicking this link." href="candidate.php">Candidate</a></li>
             <li><a href="result.php">Result</a>
             <li><a href="#">Downloads</a>
-            <li><a href="#">About</a>
-            <li><a href="#">Contact Us</a>
+            <li><a href="#">About Us</a>
+            <li><a data-step="6" data-intro="For any Feedback or Query contact us here.<b>Thank You</b>" href="#">Contact Us</a>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             
@@ -141,13 +154,13 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron jumbotron-cust">
-        <h1 class="lead white" align="center" ><b>Election</b><span class="text-muted-my"><b>Portal</b></span></h1>
+        <h1 data-step="1" data-intro="This is a Tour to understand how to use the website.Use your <b><--</b> and<b> --></b> key to navigate this tour." class="lead white" align="center" ><b>Election</b><span class="text-muted-my"><b>Portal</b></span></h1>
 
         <p class="lead" align="center">
         <label class="label label-success" align="center">Vote without standing in queues.</label>
         </p>
         <p align="center">
-          <a class="btn  btn-outline-inverse btn-lg" href="../../components/index.html#navbar">How it Works &raquo;</a>
+          <a class="btn  btn-outline-inverse btn-lg" href="javascript:void(0);" onclick="javascript:introJs().setOption('showButtons',false,'showBullets', false,'tooltipClass', 'customDefault').start();" >How it Works &raquo;</a>
         </p>
       </div>
 
@@ -168,11 +181,11 @@
             </div>
           </div>
             <!--Log in Colum-->
-          <div class=" col-lg-5">
+          <div data-step="4" data-intro="<b>Voter</b> or <b>Candidate</b> can <strong>Login</strong> from here after succesfull registeration." data-position="left" class=" col-lg-5">
           
             
               <p class="lead">
-              <span class="label label-info">Login in your Account</span>
+              <span  class="label label-info">Login in your Account</span>
               </p>
 
                 <!--log in form-->
@@ -181,7 +194,9 @@
                 <div class="form-group">
                  <label for="Id" class="col-lg-3 control-label">Voter Id   </label>
                   <div class="col-lg-9">
+
                   <input type="text" class="form-control" id="txtuser" name="txtuser" placeholder="Enter Your Voter/Candidate/Admin Id">
+
                   </div>
                 </div>
                 <div class="form-group">
@@ -224,7 +239,7 @@
                   <button type="submit" class="btn-block btn-3d btn-green btn-greenh" id="btnlogin" name="btnlogin">Log in</button>
                   
                 </div>
-                <a class=" col-lg-offset-3 col-lg-9 login-link" href="lost.php"><b>Lost Your Password?</b></a>
+                <a data-step="5" data-intro="In case you loose your <b>Password</b> you can recover it here." class=" col-lg-offset-3 col-lg-9 login-link" href="lost.php"><b>Lost Your Password?</b></a>
               </div>
             </form>
                     
@@ -243,6 +258,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/intro.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.validate.js"></script>
 
