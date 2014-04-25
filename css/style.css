@@ -1,0 +1,28 @@
+/* =======================================
+
+		Main Stylesheet
+		
+		Building on Twitter Bootstrap
+		http://twitter.github.com/bootstrap/
+		
+========================================== */
+
+@import url('css/bootstrap.css');
+@import url('css/customstyles.css');
+
+/* New styles below */
+
+		label.valid {
+		  width: 24px;
+		  height: 24px;
+		  background: url(../images/valid.png) center center no-repeat;
+		  display: block;
+		  text-indent: -9999px;
+		}
+		label.error {
+			font-weight:bold;
+			color:red;
+			padding: 2px 8px;
+			margin-top: 2px;
+			
+		}

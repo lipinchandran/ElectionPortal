@@ -1,0 +1,264 @@
+body {
+padding: 20px;
+}
+/*navbar customization*/
+.navbar-cust {
+margin-bottom: 30px;
+font-size: 17px;
+}
+
+.navbar-brand{
+	font-size: 22px;
+	font-weight: bold;
+
+}
+
+.navbar-inverse .navbar-brand {
+color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+color: #1abc9c;
+background-color: transparent;
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+color: #1abc9c;
+}
+
+.navbar-inverse{
+	background-color: #2c3e50!important;
+}
+/* jumbotron customization*/
+
+.jumbotron-cust {
+background-image: url(../images/jumb.jpg);
+background-size: cover;
+}
+
+.jumbotron-cust h1{
+font-size: 100px;
+font-weight:500;
+text-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+.white {
+	color:white!important;
+}
+
+
+.yellow{
+	color: yellow;
+}
+/* Outline button for use within the docs */
+.btn-outline {
+  color: #563d7c;
+  background-color: #fff;
+  border-color: #e5e5e5;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #563d7c;
+  border-color: #563d7c;
+}
+
+/* Inverted outline button (white on dark) */
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #cdbfe3;
+  border: solid;
+}
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+  color: #563d7c;
+  text-shadow: none;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* custom well*/
+.well-cust{
+	background-color: white;
+}
+
+/*flat Buttons*/
+.btn-green-flat{
+	background-color: #2ecc71;
+	border: none;
+}
+/* Button 3-d */
+.btn-3d {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color:white;
+	background:none;
+	cursor: pointer;
+	padding: 14px 30px;
+	display: inline-block;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight:700;
+	outline: none;
+	position: relative;
+	vertical-align: middle;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-3d:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.btn-red {
+	background: #cb4e4e;
+	color: #fff;
+	box-shadow: 0 6px #ab3c3c;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+.btn-redh{
+	border-radius: 10px;
+}
+
+.btn-redh:hover {
+	box-shadow: 0 4px #ab3c3c;
+	top: 2px;
+}
+
+.btn-redh:active {
+	box-shadow: 0 0 #ab3c3c;
+	top: 6px;
+}
+
+
+.btn-green {
+	background: #2ecc71;
+	color: #fff;
+	box-shadow: 0 6px #17954c;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+.btn-greenh{
+	border-radius: 10px;
+}
+
+.btn-greenh:hover {
+	box-shadow: 0 4px #17954c;
+	top: 2px;
+}
+
+.btn-greenh:active {
+	box-shadow: 0 0 #17954c;
+	top: 6px;
+}
+
+/*login link lost password*/
+
+a:hover, a:focus {
+color: #1abc9c;
+text-decoration: none;
+}
+
+.login-link {
+color: #a23e3e;
+display: block;
+font-size: 13px;
+margin-top: 15px;
+text-align: center;
+-webkit-transition: 0.25s;
+-moz-transition: 0.25s;
+-o-transition: 0.25s;
+transition: 0.25s;
+-webkit-backface-visibility: hidden;
+}
+
+/* flat input buttons*/
+.form-control {
+border: 2px solid #bdc3c7;
+color: #34495e;
+font-size: 15px;
+padding: 8px 12px;
+height: 41px;
+-webkit-appearance: none;
+border-radius: 6px;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+-moz-transition: border .25s linear, color .25s linear, background-color .25s linear;
+-o-transition: border .25s linear, color .25s linear, background-color .25s linear;
+transition: border .25s linear, color .25s linear, background-color .25s linear;
+-webkit-backface-visibility: hidden;
+}
+
+/*for select*/
+.form-controlselect {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #34495e;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-controlselect:focus{
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.has-error .form-controlselect {
+  border-color: #b94a48;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .form-controlselect:focus {
+  border-color: #953b39;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+}
+.has-success .form-controlselect {
+  border-color: #468847;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-success .form-controlselect:focus {
+  border-color: #356635;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+}
+
+
+/*text muting custom*/
+.text-muted-my{
+	color:#5cb85c;
+}
