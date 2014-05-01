@@ -76,13 +76,7 @@
                       
                       </br>
                       </br>
-                    <table>
-                      <thead>
-                      <tr>
-                          <th>Name</th>
-                          <th>     </th>
-                          <th>Vote</th>
-                      </tr>
+                    
                       <?php
                       //session_start();
                       //require_once('include/checklogin.php');
@@ -92,6 +86,15 @@
                           $ward=$_POST['wardNo'];
                           $selectquery="select * from voting_system.result where ward_no=$ward;";
                           $selectresult=mysql_query($selectquery);
+                          ?>
+                          <table border="1">
+                      <thead>
+                      <tr>
+                          <th>&nbsp;Name &nbsp;</th>
+                          
+                          <th>Vote</th>
+                      </tr>
+                          <?php
                           while($data=mysql_fetch_array($selectresult))
                           {
                             ?>

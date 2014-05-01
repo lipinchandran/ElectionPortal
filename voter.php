@@ -29,6 +29,9 @@
     $query="INSERT INTO voter(v_id,name,surname,father_name,dob,gender,Photo,address,email_id,mobile,ward_no,password,voter_id_proof) VALUES ('$vid','$name','$surName','$fName','$date','$gender','$image','$address','$email','$mnumber','$ward','$password','$selectProof');";
     
    mysql_query($query,$connect);
+    echo "<script language='javascript'>";
+    echo "alert('Your Login ID is : $vid');";
+    echo "</script>";
    
   }
   

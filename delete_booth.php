@@ -1,3 +1,12 @@
+<?php
+  //session_start();
+  //require_once('include/checkadmin.php');
+  require_once('include/connection.php');
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,20 +90,12 @@
           <h1 class="page-header" align="center">Delete Booth</h1>
 
           <div class="col-lg-offset-3 col-lg-7">
-      <form id="delete-booth" action="" role="form">
+      <form id="delete-booth" action="" role="form" method="post">
                 <!--<legend class="text-primary" align="center">Create Booth Form</legend>-->
                       <div class="form-group">
                         <label class="control-label" for="searchBooth">Enter BoothID</label>
                         <input type="text" class="form-control" id="searchBooth" name="searchBooth" placeholder="Enter BoothID">
-                      </div>
-                      
-                     
-                
-                       
-
-                    
-                       
-
+                      </div>              
                       <div class="">
                       <button type="submit" name="btnsearch" id="btnsearch" class="btn-block btn-3d btn-green btn-greenh">Search</button>
                     </br></br>
@@ -103,7 +104,59 @@
                     
                     </form>
                     </br>
+                    <?php
+                        if (isset($_POST['btnsearch'])) 
+                        {
+                          $id=$_POST['searchBooth'];
+                          $selectquery="select * from booth where booth_id='$id';";
+                          $selectresult=mysql_query($selectquery);
+                          $data=mysql_fetch_array($selectresult);
+                          
+                        ?>
+                        
+                          <table>
+                            <tr>
+                              <th> Booth ID </th>
+                              <td><?php echo $data['booth_id']; ?></td>
+                            </tr>
+                            <tr>
+                              <th> Supervisor name </th>
+                              <td><?php echo $data['supervisor_name']; ?></td>
+                            </tr>
+                            <tr>
+                              <th> Address </th>
+                              <td><?php echo $data['address']; ?></td>
+                            </tr>
+                            <tr>
+                              <th> Email ID </th>
+                              <td><?php echo $data['email_id']; ?></td>
+                            </tr>
+                            <tr>
+                              <th> Mobile No. </th>
+                              <td><?php echo $data['mobile']; ?></td>
+                            </tr>
+                            <tr>
+                              <th> Ward No. </th>
+                              <td><?php echo $data['ward_no']; ?></td>
+                            </tr>
+                          </table>
 
+                          <form action="" enctype="multipart/form-data" method="post">
+                            <input type="text" name="id" value="<?php echo $id; ?>" style="display:none;">
+                            <input type="submit" name="btndelete" id="btndelete" value="Delete" />
+                          </form>
+                        <?php
+                        }
+
+                    ?>
+                    <?php
+                      if (isset($_POST['btndelete'])) 
+                      {
+                         $bid=$_POST['id'];
+                         $deletequery="delete from booth where booth_id='$bid';";
+                         $deleteresult=mysql_query($deletequery);
+                       } 
+                    ?>
          
 
           

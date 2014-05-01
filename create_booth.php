@@ -1,3 +1,25 @@
+<?php
+  //session_start();
+  require_once('include/connection.php');
+  //require_once('include/checkadmin.php');
+  if (isset($_POST['btncreate'])) 
+  {
+    $id=$_POST['boothid'];
+    $name=$_POST['nameSuper'];
+    $address=$_POST['addressSuper'];
+    $mobile=$_POST['mnumberSuper'];
+    $ward=$_POST['wardSuper'];
+    $email=$_POST['emailSuper'];
+    $password=md5($_POST['passwordSuper']);
+    $query="INSERT INTO voting_system.booth(booth_id,supervisor_name,address,email_id,mobile,ward_no,password) VALUES ('$id','$name','$address','$email','$mobile','$ward','$password');";
+    $result=mysql_query($query);
+  }
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,8 +103,12 @@
           <h1 class="page-header" align="center">Create Booth</h1>
 
           <div class="col-lg-offset-3 col-lg-7">
-      <form id="create-booth" action="" role="form">
+      <form id="create-booth" action="" role="form" method="post">
                 <!--<legend class="text-primary" align="center">Create Booth Form</legend>-->
+                      <div class="form-group">
+                        <label class="control-label" for="boothid">Booth ID</label>
+                        <input type="text" class="form-control" id="boothid" name="boothid" placeholder="Enter Booth ID">
+                      </div>
                       <div class="form-group">
                         <label class="control-label" for="nameSuper">Supervisor Name</label>
                         <input type="text" class="form-control" id="nameSuper" name="nameSuper" placeholder="Enter Name">
@@ -101,12 +127,12 @@
 
                       <div class="form-group">
                         <label class="control-label" for="mnumberSuper">Mobile Number</label>
-                        <input type="number" pattern="\d\d\d\d\d\d\d\d\d\d\" class="form-control" id="mnumberSuper" name="mnumberSuper" placeholder="Enter 10 digit mobile number">
+                        <input type="tel" class="form-control" id="mnumberSuper" name="mnumberSuper" placeholder="Enter 10 digit mobile number">
                      </div>              
                      
                       <div class="form-group">
                         <label class="control-label" for="wardSuper">Ward no</label>
-                        <input type="number" class="form-control" id="wardSuper" name="wardSuper" placeholder="Enter ward no">
+                        <input type="tel" class="form-control" id="wardSuper" name="wardSuper" placeholder="Enter ward no">
                       </div>
                       <div class="form-group">
                         <label class="control-label" for="emailSuper">Email Address</label>
@@ -121,12 +147,15 @@
                        
 
                       <div class="">
-                      <button type="submit" name="create" id="create" class="btn-block btn-3d btn-green btn-greenh">Create</button>
+                      <button type="submit" name="btncreate" id="btncreate" class="btn-block btn-3d btn-green btn-greenh">Create</button>
                     </br></br>
                       <button type="reset" class="btn-block btn-3d btn-red btn-redh">Reset</button>
                       </div>
                     
                     </form>
+                    <?php
+                      echo $mobile;
+                    ?>
                     </br>
 
          

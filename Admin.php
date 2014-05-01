@@ -1,3 +1,9 @@
+<?php
+  //session_start();
+  require_once('include/connection.php');
+  //require_once('include/checkadmin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,9 +76,9 @@
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="create_booth.php">Create Booth</a></li>
-            <li><a href="">Delete Booth</a></li>
-            <li><a href="">Enable/Disable Voting</a></li>
-            <li><a href="">Enable/Disable Result</a></li>
+            <li><a href="delete_booth.php">Delete Booth</a></li>
+            <li><a href="voting_enable.php">Enable/Disable Voting</a></li>
+            <li><a href="result_enable.php">Enable/Disable Result</a></li>
             
           </ul>
           

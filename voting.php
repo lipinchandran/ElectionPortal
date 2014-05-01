@@ -1,6 +1,6 @@
 <?php
-  //session_start();
-  //require_once('include/checklogin.php');
+  session_start();
+  require_once('include/checklogin.php');
   require_once('include/Connection.php');
   
 ?>

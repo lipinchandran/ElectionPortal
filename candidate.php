@@ -30,9 +30,10 @@ if (isset($_FILES['CandidPhoto']))
       mysql_query($query,$connect);
       
       $insertquery="INSERT INTO voting_system.result(c_id,name,ward_no) VALUES ('$cid','$candiname','$candiward');";
-      mysql_query($insertquery);    
-      
-     
+      mysql_query($insertquery);         
+      echo "<script language='javascript'>";
+      echo "alert('Your Login ID is : $cid');";
+      echo "</script>";
   }
 ?>
 

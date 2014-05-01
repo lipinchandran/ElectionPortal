@@ -1,3 +1,22 @@
+<?php
+  //session_start();
+  //require_once('include/checkadmin.php');
+  require_once('include/connection.php');
+  if (isset($_POST['btnenable'])) 
+  {
+    $updatequery="update admin set voting='1';";
+    $updateresult=mysql_query($updatequery);
+    
+  }
+  if (isset($_POST['btndisable'])) 
+  {
+    $query="update admin set voting='0';";
+    $result=mysql_query($query);
+  }
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,7 +100,7 @@
           <h1 class="page-header" align="center">Voting Enable/Disable</h1>
 
           <div class="col-lg-offset-3 col-lg-7">
-      <form id="voting-enable" action="" role="form">
+      <form id="voting-enable" action="" role="form" method="post">
                 <!--<legend class="text-primary" align="center">Create Booth Form</legend>-->
                       <div class="form-group">
                         </br></br>
@@ -89,8 +108,8 @@
 
                         <button type="submit" name="btnenable" id="btnenable" class="btn-block btn-3d btn-green btn-greenh">Enable</button>
                         </br></br></br>
-
-
+                      
+                      
 
 
                         <button type="submit" name="btndisable" id="btndisable" class="btn-block btn-3d btn-red btn-redh">Disable</button>

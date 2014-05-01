@@ -113,8 +113,8 @@
 		$otppassword=$_POST['nameVoter'];
 		if(!empty($otppassword))
 		{
-			//$getOtp_query=mysql_query("select * from otp where otp_password=md5('$otppassword')");
-			$getOtp_query=mysql_query("select * from otp where otp_password='$otppassword'");
+			$getOtp_query=mysql_query("select * from otp where otp_password=md5('$otppassword')");
+			//$getOtp_query=mysql_query("select * from otp where otp_password='$otppassword'");
 			if(!$getOtp_query)
 			{
 				die("Error-->".mysql_error());
@@ -122,8 +122,8 @@
 			$count=mysql_num_rows($getOtp_query);
 			if($count==1)
 			{
-				//mysql_query("delete from otp where otp_password=md5('$otppassword')");
-				mysql_query("delete from otp where otp_password='$otppassword'");
+				mysql_query("delete from otp where otp_password=md5('$otppassword')");
+				//mysql_query("delete from otp where otp_password='$otppassword'");
 				$resultquery="select * from result where c_id='$cid'";
     			$result1=mysql_query($resultquery);
     			$data1=mysql_fetch_array($result1);
