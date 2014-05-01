@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Google Maps with Contact Form</title>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <style>
+    a#msg {
+        font-size: 11px;
+        font-family: arial;
+        text-decoration: none;
+        color: black;
+        display:inline-block;
+        padding: 5px 0;
+        border-bottom: 2px dotted lightgrey;
+    }
+    #googlemaps {
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: .75;
+    }
+    #info {
+        position: relative;
+        z-index: 1;
+        width: 300px;
+        margin: 50px auto 0;
+    }
+    input, textarea {
+        border: none;
+        outline: none;
+        resize: none;
+        width: 100%;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        font-size: 13px;
+        margin: 0;
+        padding: 0;
+    }
+    .contact-form {
+        background: white;
+        height: auto;
+        max-width: 500px;
+        overflow: hidden;
+        width: 327px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -moz-box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0;
+        -webkit-box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0;
+        box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0;
+    }
+    @media (max-width: 500px) {
+        .contact-form {
+            margin: 0 0 100px;
+            width: 100%;
+        }
+    }
+    .contact-form .email, .contact-form .message, .contact-form .name {
+        position: relative;
+    }
+    .contact-form .email input:focus, .contact-form .email textarea:focus, .contact-form .message input:focus, .contact-form .message textarea:focus, .contact-form .name input:focus, .contact-form .name textarea:focus {
+        background: #f4f5f6;
+    }
+    @media (max-width: 500px) {
+        .contact-form .email, .contact-form .name {
+            width: 100%;
+        }
+    }
+    .contact-form .email input, .contact-form .name input {
+        padding: 23px 0 8px 23px;
+    }
+    .contact-form .email {
+        border-left: 1px #e6e6e6 solid;
+        float: right;
+    }
+    @media (max-width: 500px) {
+        .contact-form .email {
+            border-left: none;
+            border-top: 1px #e6e6e6 solid;
+        }
+    }
+    .contact-form .message {
+        border-bottom: 1px #e6e6e6 solid;
+        border-top: 1px #e6e6e6 solid;
+        clear: both;
+    }
+    .contact-form .message textarea {
+        height: 100px;
+        padding: 20px;
+    }
+    .contact-form .name {
+        float: left;
+    }
+    .contact-form .submit {
+        background: #f4f5f6;
+        display: block;
+        overflow: hidden;
+        padding: 10px;
+    }
+    .contact-form .submit .button {
+        background: #3498db;
+        border: 1px #3498db solid;
+        color: white;
+        float: right;
+        padding: 9px 0;
+        width: 100px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    @media (max-width: 500px) {
+        .contact-form .submit .button {
+            float: none;
+        }
+    }
+    .contact-form .submit .button:hover {
+        background: #4aa3df;
+    }
+    .contact-form .submit .button:active {
+        background: #258cd1;
+    }
+    .contact-form .submit .button:focus {
+        border-color: #b6daf2;
+        -moz-box-shadow: #75b9e7 0 0 4px 1px, #75b9e7 0 0 4px 1px inset;
+        -webkit-box-shadow: #75b9e7 0 0 4px 1px, #75b9e7 0 0 4px 1px inset;
+        box-shadow: #75b9e7 0 0 4px 1px, #75b9e7 0 0 4px 1px inset;
+    }
+    .contact-form .submit .user-message {
+        float: left;
+        padding-top: 22px;
+    }
+    @media (max-width: 500px) {
+        .contact-form .submit .user-message {
+            float: none;
+            padding: 0 0 10px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="googlemaps">
+    </div>
+    <div id="info">
+        <form class="contact-form">
+            <div class="name">
+                <input type="text" id="name" placeholder="Your Name" />
+            </div>
+            <div class="email">
+                <input type="text" id="email" placeholder="Your Email Address" />
+            </div>
+            <div class="message">
+                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            </div>
+            <div class="submit">
+                
+                <input type="button" value="Contact" class="button" onclick="document.getElementById('message').value='This is a demo .'" />
+            </div>
+        </form>
+    </div>
+    <script>
+
+    var position = [20.294493, 72.877394];
+    var position1 = [20.299081,72.866665];
+
+    function initialize() {
+
+        var myOptions = {
+            zoom: 15,
+            streetViewControl: true,
+            scaleControl: true,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+
+        map = new google.maps.Map(document.getElementById('googlemaps'),
+            myOptions);
+
+
+        latLng = new google.maps.LatLng(position[0], position[1]);
+        latLng1= new google.maps.LatLng(position1[0],position1[1]);
+
+        map.setCenter(latLng1);
+
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.DROP
+        });
+
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</body>
+
+
+
+</html>
+
