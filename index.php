@@ -99,6 +99,7 @@
     <link rel="stylesheet" type="text/css" href="css/introjs.css">
     <link href="css/customstyles.css"rel="stylesheet">
     <link href="css/style.css"rel="stylesheet">
+
     <style>
       .forLastStep {
         font-weight: bold;
@@ -138,15 +139,15 @@
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
             <li><a data-step="2" data-intro="<b>Voter</b> can register himself by clicking this link." href="voter.php">Voter</a></li>
-            <li ><a data-step="3" data-intro="<b>Candidate</b> can register himself by clicking this link." href="candidate.php">Candidate</a></li>
+            <li><a data-step="3" data-intro="<b>Candidate</b> can register himself by clicking this link." href="candidate.php">Candidate</a></li>
             <li><a href="result.php">Result</a>
             <li><a href="#">Downloads</a>
-            <li><a href="#">About Us</a>
-            <li><a data-step="6" data-intro="For any Feedback or Query contact us here.<b>Thank You</b>" href="#">Contact Us</a>
+            <li><a href="#">About</a>
+            <li><a data-step="6" data-intro="For any Feedback or Query contact us here.<b>Thank You</b>" href="contactus.html">Contact Us</a>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             
-            <li><a href="#">Today:31st October 2013</a></li>
+            <li><a href="#">Today:<?php print(date("l F ,Y")) ?></a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
@@ -160,7 +161,7 @@
         <label class="label label-success" align="center">Vote without standing in queues.</label>
         </p>
         <p align="center">
-          <a class="btn  btn-outline-inverse btn-lg" href="javascript:void(0);" onclick="javascript:introJs().setOption('showButtons',false,'showBullets', false,'tooltipClass', 'customDefault').start();" >How it Works &raquo;</a>
+          <a class="btn  btn-outline-inverse btn-lg" href="javascript:void(0);" onclick="javascript:introJs().setOption('showButtons',false,'showBullets', false,'tooltipClass', 'customDefault').start();">How it Works &raquo;</a>
         </p>
       </div>
 
@@ -185,7 +186,7 @@
           
             
               <p class="lead">
-              <span  class="label label-info">Login in your Account</span>
+              <span class="label label-info">Login in your Account</span>
               </p>
 
                 <!--log in form-->
@@ -194,9 +195,7 @@
                 <div class="form-group">
                  <label for="Id" class="col-lg-3 control-label">Voter Id   </label>
                   <div class="col-lg-9">
-
                   <input type="text" class="form-control" id="txtuser" name="txtuser" placeholder="Enter Your Voter/Candidate/Admin Id">
-
                   </div>
                 </div>
                 <div class="form-group">
@@ -259,7 +258,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="js/intro.js"></script>
-    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.validate.js"></script>
 

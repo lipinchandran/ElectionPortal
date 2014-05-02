@@ -1,7 +1,7 @@
 <?php
-  //session_start();
+  session_start();
   require_once('include/connection.php');
-  //require_once('include/checkadmin.php');
+  require_once('include/checkadmin.php');
 ?>
 
 <!DOCTYPE html>

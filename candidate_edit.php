@@ -1,6 +1,6 @@
 <?php
-  //session_start();
-  //require_once('include/checkbooth.php');
+  session_start();
+  require_once('include/checkbooth.php');
   require_once('include/Connection.php');
   if(isset($_GET['id']))
   {

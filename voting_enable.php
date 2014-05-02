@@ -1,6 +1,6 @@
 <?php
-  //session_start();
-  //require_once('include/checkadmin.php');
+  session_start();
+  require_once('include/checkadmin.php');
   require_once('include/connection.php');
   if (isset($_POST['btnenable'])) 
   {

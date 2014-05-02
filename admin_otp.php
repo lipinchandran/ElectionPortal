@@ -84,7 +84,7 @@
                         <p class="help-block">The Password was sent to your Registerd Email Address</p>
                       </div>
 
-                      <div class="form-group">
+                      <!--<div class="form-group">
                       <h1 class="text-muted"> Admin 3 One Time Password </h1>
                         <label class="control-label" for="nameVoter">Enter OTP</label>
                         <input type="text" class="form-control" id="nameVoter" name="password3" placeholder="Enter One Time Password">
@@ -96,7 +96,7 @@
                         <label class="control-label" for="nameVoter">Enter OTP</label>
                         <input type="text" class="form-control" id="nameVoter" name="password4" placeholder="Enter One Time Password">
                         <p class="help-block">The Password was sent to your Registerd Email Address</p>
-                      </div>
+                      </div>-->
 
                      
 
@@ -114,7 +114,7 @@
 								$password4=$_POST['password4'];
 								if(!empty($password1) && !empty($password2) && !empty($password3) && !empty($password4))
 								{
-									$result=mysql_query("select * from temppassword where password1='$password1' && password2='$password2' && password3='$password3' && password4='$password4'");
+									$result=mysql_query("select * from temppassword where password1='$password1' && password2='$password2'");
 									$count=mysql_num_rows($result);
 									if($count==1)
 									{

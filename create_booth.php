@@ -1,7 +1,7 @@
 <?php
-  //session_start();
+  session_start();
   require_once('include/connection.php');
-  //require_once('include/checkadmin.php');
+  require_once('include/checkadmin.php');
   if (isset($_POST['btncreate'])) 
   {
     $id=$_POST['boothid'];

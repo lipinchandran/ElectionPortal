@@ -91,7 +91,7 @@ if (isset($_FILES['CandidPhoto']))
           </ul>
           <ul class="nav navbar-nav navbar-right">
             
-            <li><a href="#">Today:31st October 2013</a></li>
+            <li><a href="#">Today:<?php print(date("l F ,Y")) ?></a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
