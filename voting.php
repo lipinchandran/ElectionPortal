@@ -8,8 +8,10 @@
 <?php
   if(isset($_POST['vote']))
   {
-    $cid=$_POST['vote'];
-    header("Location:sendmail.php?cid=$cid");
+    
+      $cid=$_POST['vote'];
+      header("Location:sendmail.php?cid=$cid");
+    
   }
   /*if(isset($_POST['vote']) && isset($_POST['opt']))
   {

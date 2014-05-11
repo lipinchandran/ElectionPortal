@@ -21,6 +21,7 @@
 			               {
                         session_start();
 				                $_SESSION['id']=$user;
+                        $_SESSION['login']=$selectlogin;
 				                header("location:voting.php");
 			               }
                      else
@@ -41,6 +42,7 @@
 			                 {
                           session_start();
 				                  $_SESSION['id']=$user;
+                          $_SESSION['login']=$selectlogin;
 				                  header("location:voting.php");
 			                 }
                        else
@@ -141,7 +143,7 @@
             <li><a data-step="2" data-intro="<b>Voter</b> can register himself by clicking this link." href="voter.php">Voter</a></li>
             <li><a data-step="3" data-intro="<b>Candidate</b> can register himself by clicking this link." href="candidate.php">Candidate</a></li>
             <li><a href="result.php">Result</a>
-            <li><a href="#">Downloads</a>
+            <li><a href="generate_pdf.php">Downloads</a>
             <li><a href="#">About</a>
             <li><a data-step="6" data-intro="For any Feedback or Query contact us here.<b>Thank You</b>" href="contactus.html">Contact Us</a>
           </ul>
